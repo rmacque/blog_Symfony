@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <link href="{{ asset('stylesheets/general.css') }}" rel="stylesheet"/>
+        <!-- <link href="/general.css" rel="stylesheet"/> -->
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block nav %}
+            <nav class="navigation">
+            {# moyen utile d'afficher le contenu d'une fonction spécifique #}
+            {{ render(controller("App\\Controller\\General::navbarCreate")) }}
+            {% if is_granted("ROLE_USER") %}
+                <a href="{{ path('app_logout') }}" class="connexion">Déconnexion</a>
+            {% else %}
+                <a href="{{ path('app_login') }}" class="connexion">Connexion</a>
+            {% endif %}
+            </nav>
+        {% endblock %}
+        {% block body %}{% endblock %}
+    </body>
+</html>
+
+{# Commentaires Twig 
+
+#}

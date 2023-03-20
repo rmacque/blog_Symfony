@@ -1,0 +1,14 @@
+{% extends 'article/base.html.twig' %}
+
+{% block title %}Article {{ id }}{% endblock %}
+
+{% block body %}
+{#{ form(formulaire) }#}
+{{ form_start(formulaire) }}
+    {{ form_row(formulaire.nomArticle) }}
+    {{ form_row(formulaire.contenu) }}
+    {{ form_row(formulaire.categories) }}
+    {{ form_row(formulaire.save) }}
+{{ form_end(formulaire) }}
+{{ dump(erreurs) }}
+{% endblock body%}

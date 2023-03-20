@@ -1,0 +1,44 @@
+{% extends 'article/base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+<div class="contenu">
+    <h1>{{ titre }}</h1>
+    <div class="liste_aperçu">
+        {% for article in listeArticles %}
+            <div class="aperçu article">
+                <h5 class="titre">{{ article.nomArticle|u.title() }}</h5>
+                {% if article.contenu|length < 50 %}
+                    <p>{{ article.contenu }}<br></p>
+                {% else %}
+                    <p>{{ article.contenu|u.truncate(50, "...") }}<br><a class="details "href="{{ path('article_details', {id: article.id}) }}">Tout voir</a></p>
+                {% endif %}
+                <div class="date">{{ article.DateCreation|format_datetime("short", "short") }}</div>
+                <div class="reference">
+                    {% for categorie in article.categories %}
+                        #{{ categorie.nomCategorie }}
+                    {% endfor %}
+                </div>
+                {% if is_granted('ROLE_USER') %}
+                    <a class="bouton_inf" href="{{ path('article_edition', {id: article.id}) }}">Editer</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    {% if is_granted('ROLE_USER') %}
+        <div class="creation"><a class="bouton" href="{{ path("article_creation") }}">Créer un article</a></div>
+    {% endif %}
+
+    {# Pagination #}
+    <div class="pagination">
+    {% if page > 0 %}
+        <a class="bouton precedent" href="{{ path('article_aperçu', {page: page-1}) }}">Page Précédente</a>
+    {% endif %}
+
+    {% if total > (page + 1) * par_page %}
+        <a class="bouton suivant" href="{{ path('article_aperçu', {page: page+1}) }}">Page Suivante</a>
+    {% endif %}
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,22 @@
+{% extends 'categorie/base.html.twig' %}
+
+{% block title %}Categorie {{ categorie.id }}{% endblock %}
+
+{% block body %}
+{#{ form(formulaire) }#}
+<div class="contenu">
+    <h3>Editer une catégorie</h4>
+    {{ form_start(formulaire, {"attr": {"class" : "edition"}} ) }}
+        {{ form_widget(formulaire.nomCategorie, {"attr": {"class" : "categorie titre"}} ) }}
+            {% if form_errors(formulaire.nomCategorie) is not null %}
+                <div class="erreurs">Nom invalide</div><br>
+            {% endif %}
+        {{ form_widget(formulaire.description, {"attr": {"class" : "categorie description", "rows" : "3"}} ) }}
+            {# l'erreur est placee de cette maniere pour garder le contrôle avec le CSS #}
+            {% if form_errors(formulaire.description) is not null %}
+                <div class="erreurs">Description invalide</div><br>
+            {% endif %}
+        {{ form_row(formulaire.save, {"attr": {"class" : "bouton"}} ) }}
+    {{ form_end(formulaire) }}
+</div>
+{% endblock body %}

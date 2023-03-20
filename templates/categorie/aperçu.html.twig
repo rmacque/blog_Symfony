@@ -1,0 +1,25 @@
+{% extends 'categorie/base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block body %}
+<h1>{{ titre }}</h1>
+    {% for categorie in listeCategories %}
+    <div class="aperçu categorie">
+        <div class= "titre">{{ categorie.nomCategorie|u.title() }}</div>
+        <p>{{ categorie.description }}</p>
+        <div class="reference">
+        {% for article in categorie.articles %}
+            <a class="details" href="{{ path('article_details', {id: article.id}) }}">#{{ article.nomArticle }}</a>
+        {% endfor %}
+        </div>
+        {% if is_granted("ROLE_ADMIN") %}
+            <a class="bouton_inf" href="{{ path('categorie_edition', {id: categorie.id}) }}">Editer</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <div>
+    {% if is_granted("ROLE_ADMIN") %}
+        <a class="bouton" href="{{ path("categorie_creation") }}">Créer une categorie</a></div>
+    {% endif %}
+{% endblock body %}

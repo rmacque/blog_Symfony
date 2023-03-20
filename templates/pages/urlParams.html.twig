@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block title %} Details des parametres d'une URL {% endblock title %}
+{% block body %}  
+    <h1>Parametres de l'URL :</h1>
+    <p>{{ parametre1 }} {{ parametre2 }}</p>
+    <div>nom de la route: "{{ nomRoute }}"</div>
+    <div>tous les paramètres :{{ paramsRoute }}</div>
+    <h5>Tous les paramètres:</h5>{{ dump(all) }}
+{% endblock body %}  

@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+{% block title %} Accueil des nuls sur Symfony {% endblock title %}
+{% block body %}
+    <h1>Accueil du tuto</h1>
+    <p>Username: {{ app.user.username ?? 'Anonymous user' }}</p>
+    {% if app.debug %}
+        <p>Request method: {{ app.request.method }}</p>
+        <p>Application Environment: {{ app.environment }}</p>
+    {% endif %}
+    <div>Emplacement de ce projet: {{ projectDir }}</div>
+    <h3>Resultats de la Loterie : {{ Loto }}</h3>
+{% endblock body %}

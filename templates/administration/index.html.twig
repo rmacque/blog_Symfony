@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+<div class="contenu">
+    <div class="entite">
+    <h3>Articles</h3>
+    <table>
+        <thead>
+            <tr><td>Numéro</td><td>Titre</td><td colspan="2">Gérer</td></tr>
+        </thead>
+        <tbody>
+            {% set i = 1 %}
+            {% for article in articles %}
+                {% if i%2 == 0 %}
+                    <tr class="pair">
+                {% else %}
+                    <tr class="impair">
+                {% endif %}
+                        <td>{{ i }}</td>
+                        <td>{{ article.nomArticle }}</td>
+                        <td><a class="bouton_inf" href="{{ path('article_edition', {id : article.id}) }}">Editer</a></td>
+                        <td><a class="bouton_suppr" href="{{ path('article_suppression', {id : article.id}) }}">Supprimer</a></td>
+                    </tr>
+                {% set i = i+1 %}
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <div class="entite">
+    <h3>Catégories</h3>
+    <table>
+        <thead>
+            <tr><td>Numéro</td><td>Titre</td><td colspan="2">Gérer</td></tr>
+        </thead>
+        <tbody>
+            {% set i = 1 %}
+            {% for categorie in categories %}
+                {% if i%2 == 0 %}
+                    <tr class="pair">
+                {% else %}
+                    <tr class="impair">
+                {% endif %}
+                        <td>{{ categorie.id }}</td>
+                        <td>{{ categorie.nomCategorie }}</td>
+                        <td><a class="bouton_inf" href="{{ path('categorie_edition', {id : categorie.id}) }}">Editer</a></td>
+                        <td><a class="bouton_suppr" href="{{ path('categorie_suppression', {id : categorie.id}) }}">Supprimer</a></td>
+                    </tr>
+                {% set i = i+1 %}
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{#{ categories }#}
+{% endblock body %}
