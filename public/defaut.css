@@ -1,0 +1,57 @@
+body{
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.navigation{
+    background: #2d85d6;
+    padding: 1em;
+}
+
+.navigation > a{
+    color:white;
+    margin: 0em 1em;
+}
+
+.article{
+    display: inline-block;
+    width: 20em;
+}
+
+.categorie{
+    display: flow-root;
+}
+
+.listing{
+    margin: 1em 2em;
+    padding: 0.5em;
+    border: solid 2px #2d85d6;
+}
+
+.listing > .titre{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.listing > .date{
+    text-align: center;
+    color: rgb(209, 205, 205);
+}
+
+.pagination{
+    margin: 1em 0em;
+}
+
+.pagination > a{
+    background-color: #2d85d6;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.table_container{
+    display: flex;
+}
+
+.info{
+    background-color:lightgreen;
+}

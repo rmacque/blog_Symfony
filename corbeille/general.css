@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body {
+  padding: 0em 25em;
+  background-color: white;
+}
+
+.connexion {
+  float: right;
+}
+
+.navigation {
+  background: #2d54d6;
+  padding: 1em;
+}
+.navigation a {
+  position: relative;
+  color: lightgreen;
+  margin: 0em 1em;
+  text-decoration-line: unset;
+}
+.navigation a:hover {
+  transition: 1s;
+  color: white;
+}
+
+.listing {
+  margin: 1em 2em;
+  padding: 0.5em;
+  border: solid 2px #2d54d6;
+  border-radius: 1em;
+}
+.listing .titre {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+  text-align: center;
+}
+.listing .date {
+  text-align: center;
+  color: #d1cdcd;
+}
+
+.article {
+  display: inline-grid;
+  width: 21em;
+  height: 11em;
+}
+
+.categorie {
+  display: flow-root;
+}
+
+.pagination .suivant {
+  float: right;
+  text-decoration: unset;
+}
+.pagination .suivant::after {
+  content: " >";
+  color: #2d54d6;
+}
+.pagination .précédent {
+  float: left;
+  text-decoration: unset;
+}
+.pagination .précédent::before {
+  content: "< ";
+  color: #2d54d6;
+}
+
+.login {
+  position: relative;
+  left: 40%;
+  width: fit-content;
+  top: 1em;
+}
+.login button {
+  float: right;
+}
+
+/*# sourceMappingURL=general.css.map */

@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/***
+
+Tout le style des boutons du site
+
+***/
+.bouton {
+  text-decoration: unset;
+  color: lightgreen;
+  background-color: #1841c5;
+  border-radius: 10px;
+  border: solid 2px #999;
+  padding: 0.5em;
+}
+.bouton:hover {
+  color: white;
+}
+.bouton:active {
+  background-color: #0d236a;
+}
+
+.bouton_inf {
+  text-decoration: unset;
+  color: lightgreen;
+  background-color: #1841c5;
+  padding: 0.1em 0.6em;
+  border: solid 2px #888;
+}
+.bouton_inf:active {
+  background-color: #0d236a;
+  text-shadow: 0.1em 0.1em black;
+}
+
+.bouton_suppr {
+  text-decoration: unset;
+  color: white;
+  background-color: #d22525;
+  padding: 0.1em 0.6em;
+  border: solid 2px #888;
+}
+.bouton_suppr:active {
+  background-color: #7b1616;
+  text-shadow: 0.1em 0.1em black;
+}
+
+.bouton.suivant {
+  float: right;
+}
+.bouton.suivant::after {
+  content: " >";
+  color: lightgreen;
+}
+
+.bouton.precedent {
+  float: left;
+}
+.bouton.precedent::before {
+  content: "< ";
+  color: lightgreen;
+}
+
+/***
+
+style de la page de connexion
+
+***/
+.login {
+  padding: 1em 2em;
+  margin: auto;
+  text-align: center;
+  border: solid 1px black;
+  border-radius: 10px;
+  background-color: #CCC;
+  width: fit-content;
+}
+.login input {
+  width: 18em;
+  font-size: initial;
+}
+.login div {
+  padding: 0.5em 0em;
+}
+.login a {
+  color: #1841c5;
+  text-decoration: unset;
+}
+.login a:hover {
+  text-decoration: underline;
+}
+
+/***
+
+Les règles pour les petits détails
+
+***/
+body {
+  padding: 0em 3em;
+  background-color: white;
+}
+
+.connexion {
+  float: right;
+}
+
+.navigation {
+  background: #1841c5;
+  padding: 1em;
+}
+.navigation a {
+  position: relative;
+  color: lightgreen;
+  margin: 0em 1em;
+  text-decoration-line: unset;
+}
+.navigation a:hover {
+  transition: 1s;
+  color: white;
+}
+
+.contenu {
+  padding: 1em;
+  text-align: center;
+}
+
+.liste_aperçu {
+  width: fit-content;
+  margin: auto;
+}
+
+.aperçu {
+  margin: 1em 2em;
+  padding: 0.5em;
+  border: solid 2px #1841c5;
+  border-radius: 1em;
+}
+.aperçu .titre {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+  text-align: center;
+}
+.aperçu .date {
+  text-align: center;
+  color: #d1cdcd;
+}
+.aperçu .reference {
+  padding: 0.3em 0em;
+}
+
+.aperçu.article {
+  width: 21em;
+  display: inline-block;
+}
+
+.details {
+  text-decoration: unset;
+  color: blue;
+}
+
+.entite {
+  text-align: center;
+  display: inline-block;
+  margin: 0 13%;
+}
+.entite h3 {
+  width: inherit;
+}
+.entite table {
+  border-collapse: collapse;
+}
+.entite .pair {
+  background-color: #869ff0;
+}
+.entite td {
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  padding: 0.3em 0.5em;
+}
+.entite thead {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  background-color: #869ff0;
+}
+
+.edition .titre {
+  margin: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.edition .description {
+  margin: 1em;
+  width: 50em;
+  resize: none;
+}
+.edition .erreurs {
+  color: red;
+  display: inline;
+}
+
+/*# sourceMappingURL=general.css.map */

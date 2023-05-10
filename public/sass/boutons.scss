@@ -1,0 +1,63 @@
+/***
+
+Tout le style des boutons du site
+
+***/
+
+.bouton{
+    text-decoration: unset;
+    color: $couleur_liens_principaux;
+    background-color: $couleur_principale;
+    border-radius: 10px;
+    border: solid 2px #999;
+    padding: 0.5em;
+    &:hover{
+        color: white;
+    }
+
+    &:active{
+        background-color: darken($color: $couleur_principale, $amount: 20%);
+    }
+}
+
+.bouton_inf{
+    text-decoration: unset;
+    color: $couleur_liens_principaux;
+    background-color: $couleur_principale;
+    padding: 0.1em 0.6em;
+    border: solid 2px #888;
+
+    &:active{
+        background-color: darken($color: $couleur_principale, $amount: 20%);
+        text-shadow: 0.1em 0.1em black;
+    }
+}
+
+.bouton_suppr{
+    text-decoration: unset;
+    color: white;
+    background-color: #d22525;
+    padding: 0.1em 0.6em;
+    border: solid 2px #888;
+
+    &:active{
+        background-color: darken($color: #d22525, $amount: 20%);
+        text-shadow: 0.1em 0.1em black;
+    }
+}
+
+.bouton.suivant{
+    float: right;
+    &::after{
+        content: " >";
+        color: $couleur_liens_principaux;
+    }
+}
+
+.bouton.precedent{
+    float: left;        
+    &::before{
+        content: "< ";
+        color: $couleur_liens_principaux;
+    }
+}
